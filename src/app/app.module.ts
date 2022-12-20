@@ -31,8 +31,8 @@ import { ProfileComponent } from './profile/profile/profile.component';
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Home' } },
   {path: 'register', component: RegisterComponent},
-  {path:'login', component:LoginComponent},
-  {path:'profile', component:ProfileComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'profile', component: ProfileComponent},
   {
     path: 'guide/getting-started',
     component: GettingStartedComponent,
