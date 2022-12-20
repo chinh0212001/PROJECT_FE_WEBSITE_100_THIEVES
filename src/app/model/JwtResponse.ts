@@ -1,8 +1,8 @@
 export class JwtResponse{
-    token:string;
-    name:string;
-    avatar:string;
-    roles:any[];
+    token: string;
+    name: string;
+    avatar: string;
+    roles: any[];
 
     constructor(token: string, name: string, avatar: string, roles: any[]) {
         this.token = token;
