@@ -7,9 +7,9 @@ import {ThemePickerModule} from '../theme-picker';
 import {ThemeStorage} from '../theme-picker/theme-storage/theme-storage';
 import {StyleManager} from '../style-manager';
 import {HttpClientModule} from '@angular/common/http';
-import {MatIconModule} from "@angular/material/icon";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {TokenService} from "../../service/token.service";
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {TokenService} from '../../service/token.service';
 
 @Component({
     selector: 'app-navbar',

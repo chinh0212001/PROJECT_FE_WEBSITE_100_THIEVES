@@ -17,13 +17,13 @@ export class LoginComponent implements OnInit {
 
   constructor(private authService: AuthService,
               private tokenService: TokenService,
-              private router:Router) {
+              private router: Router) {
   }
 
   ngOnInit(): void {
-    console.log("check------------>",localStorage.getItem("SUCCESS_KEY"));
-    if (localStorage.getItem("SUCCESS_KEY") != null){
-      this.status = localStorage.getItem("SUCCESS_KEY");
+    console.log('check------------>', localStorage.getItem('SUCCESS_KEY'));
+    if (localStorage.getItem('SUCCESS_KEY') != null){
+      this.status = localStorage.getItem('SUCCESS_KEY');
     }else {
       this.status = 'Please fill in the form to login!';
     }
@@ -35,22 +35,24 @@ export class LoginComponent implements OnInit {
         this.form.username,
         this.form.password
     );
-    this.authService.signIn(this.signInForm).subscribe(data=>{
-      console.log("data===>>>>>>>>>>>>>>",data);
+    this.authService.signIn(this.signInForm).subscribe(data => {
+      console.log('data===>>>>>>>>>>>>>>', data);
+      // tslint:disable-next-line:triple-equals
       if (data.token != undefined){
         this.tokenService.setToken(data.token);
         this.tokenService.setName(data.name);
         this.tokenService.setAvatar(data.avatar);
         this.tokenService.setRole(data.roles);
         localStorage.removeItem('SUCCESS_KEY');
-        this.router.navigate(['profile']).then(()=>{
+        this.router.navigate(['profile']).then(() => {
           location.reload();
-        })//dieu huong tu TS ----->component
+        }); // dieu huong tu TS ----->component
       }
      // @ts-ignore
+      // tslint:disable-next-line:triple-equals
       if (data.status == 202){
-        this.status ='Login Failed! Please check your username or password';
+        this.status = 'Login Failed! Please check your username or password';
       }
-    })
+    });
   }
 }
